@@ -62,6 +62,23 @@ function getRandomIntInclusive(min, max) {
 //console.log(calcSales);
 
 
+function render() {
+    const ul = document.getElementById('sales');
+    for(let i = 0; i < hours.length; i++) {
+        const li = document.createElement('li');
+        li.textContent = hours[i] + ' : ' + this.salesByHour[i].cookiesSold + ' cookies ';
+        ul.appendChild(li);
+    }
+};
+
+function callStoreName() {
+    const h3 = document.getElementById('title');
+    for(let i = 0; i < name.length; i++) {
+        const h3 = document.createElement('h3');
+        h3.textContent = this.name[i];
+    }
+}
+
 // Object literal for each store
 const airport = {
     name: 'PDX Airport',
@@ -74,15 +91,6 @@ const airport = {
 };
 airport.hourlySales();
 airport.render();
-
-function render() {
-    const ul = document.getElementById('sales');
-    for(let i = 0; i < hours.length; i++) {
-        const li = document.createElement('li');
-        li.textContent = hours[i] + ' : ' + this.salesByHour[i].cookiesSold + ' cookies ';
-        ul.appendChild(li);
-    }
-}
 
 const pioneer = {
     name: 'Pioneer Square',
@@ -131,17 +139,3 @@ const waterfront = {
 };
 waterfront.hourlySales();
 waterfront.render();
-
-//const ul = document.getElementById('main-list')
-// 1. create the element that you want
-//const li = document.createElement('li');
-
-// 3. add (append) to the parent element
-//ul.appendChild(li);
-
-
-
-//for(let i = 0; i < hours.length; i++) {
-//    const li = hourlySales[i].render();
-//    ul.appendChild(li);
-//}
