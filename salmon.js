@@ -71,13 +71,13 @@ function render() {
     }
 };
 
-function callStoreName() {
-    const h3 = document.getElementById('title');
-    for(let i = 0; i < name.length; i++) {
-        const h3 = document.createElement('h3');
-        h3.textContent = this.name[i];
-    }
-}
+//function callStoreName() {
+//    const h3 = document.getElementById('title');
+//    for(let i = 0; i < name.length; i++) {
+//        const h3 = document.createElement('h3');
+//        h3.textContent = this.name[i];
+//    }
+//}
 
 // Object literal for each store
 const airport = {
