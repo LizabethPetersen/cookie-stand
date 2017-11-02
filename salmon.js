@@ -64,6 +64,7 @@ function getRandomIntInclusive(min, max) {
 
 // Object literal for each store
 const airport = {
+    name: 'PDX Airport',
     min: 23,
     max: 65,
     avgSold: 6.3,
@@ -83,78 +84,55 @@ function render() {
     }
 }
 
-//const pioneer = {
-//    min: 3,
-//    max: 24,
-//    avgSold: 1.2,
-//    salesByHour: salesByHour,
-//    //    calcSales: 
-//    render() {
-//        const div = document.createElement('div');
-//        const li = document.createElement('li');
-//        for(let i = 0; i < this.hour.length; i++) {
-//            li.textContent = this.hour + ' ' + this.salesByHour + ' cookies ';
-//            div.appendChild('li');
-//        }
-//        return li;
-//    }
-//};
-//
-//const powells = {
-//    min: 11,
-//    max: 38,
-//    avgSold: 3.7,
-//    salesByHour: salesByHour,
-//    //   calcSales: total,
-//    render() {
-//        const div = document.createElement('div');
-//        const li = document.createElement('li');
-//        for(let i = 0; i < this.hour.length; i++) {
-//            li.textContent = this.hour + ' ' + this.salesByHour + ' cookies ';
-//            div.appendChild('li');
-//        }
-//        return li;
-//    }
-//};
-//
-//const stjohns = {
-//    min: 20,
-//    max: 38,
-//    avgSold: 2.3,
-//    salesByHour: salesByHour,
-//    //    calcSales: total,
-//    render() {
-//        const div = document.createElement('div');
-//        const li = document.createElement('li');
-//        for(let i = 0; i < this.hour.length; i++) {
-//            li.textContent = this.hour + ' ' + this.salesByHour + ' cookies ';
-//            div.appendChild('li');
-//        }
-//        return li;
-//    }
-//};
-//
-//const waterfront = {
-//    min: 2,
-//    max: 16,
-//    avgSold: 4.6,
-//    salesByHour: salesByHour,
-//    //   calcSales: total,
-//    render() {
-//        const div = document.createElement('div');
-//        const li = document.createElement('li');
-//        for(let i = 0; i < this.hour.length; i++) {
-//            li.textContent = this.hour + ' ' + this.salesByHour + ' cookies ';
-//            div.appendChild('li');
-//        }
-//        return li;
-//    }
-//};
+const pioneer = {
+    name: 'Pioneer Square',
+    min: 3,
+    max: 24,
+    avgSold: 1.2,
+    hourlySales: hourlySales,
+    salesByHour: [],
+    render: render,
+};
+pioneer.hourlySales();
+pioneer.render();
 
+const powells = {
+    name: 'Powell\'s',
+    min: 11,
+    max: 38,
+    avgSold: 3.7,
+    hourlySales: hourlySales,
+    salesByHour: [],
+    render: render,
+};
+powells.hourlySales();
+powells.render();
 
+const stjohns = {
+    name: 'St. John\'s',
+    min: 20,
+    max: 38,
+    avgSold: 2.3,
+    hourlySales: hourlySales,
+    salesByHour: [],
+    render: render,
+};
+stjohns.hourlySales();
+stjohns.render();
 
-//const ul = document.getElementById('main-list');
+const waterfront = {
+    name: 'Waterfront',
+    min: 2,
+    max: 16,
+    avgSold: 4.6,
+    hourlySales: hourlySales,
+    salesByHour: [],
+    render: render,
+};
+waterfront.hourlySales();
+waterfront.render();
 
+//const ul = document.getElementById('main-list')
 // 1. create the element that you want
 //const li = document.createElement('li');
 
