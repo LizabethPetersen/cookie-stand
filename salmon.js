@@ -1,27 +1,8 @@
 'use strict';
 
-//const div = document.createElement('div');
-//const h1 = document.createElement('h1');
-//const h2 = document.createElement('h2');
-//const ul = document.createElement('ul');
-//const li = document.createElement('li');
-
-//// 0. get a reference to the parent element
-//const ul = document.getElementById('car-list');
-//
-//// 1. create the element that you want
-//const li = document.createElement('li');
-//
-//// 2. set attributes and text value
-//li.textContent = 'Ford Pinto';
-//li.classList.add('car');
-//
-//// 3. add (append) to the parent element
-//ul.appendChild(li);
-
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '8pm',];
-//const stores = ['airport', 'pioneer', 'powells', 'stjohns', 'waterfront'];
+//const storeName = ['airport', 'pioneer', 'powells', 'stjohns', 'waterfront'];
 
 // Function for calculating customers per hour per store
 function hourlySales(){
@@ -39,6 +20,27 @@ function hourlySales(){
     this.salesByHour = salesByHour;
 }
 
+// Function renders # of customers and cookies sold per hour
+function render() {
+    const div = document.createElement('DIV');
+    const h2 = document.createElement('H2');
+    div.appendChild(h2);
+    const ul = document.getElementById('sales');
+    for(let i = 0; i < hours.length; i++) {
+        const li = document.createElement('li');
+        li.textContent = this.name + ' : ' + hours[i] + ' : ' + this.salesByHour[i].cookiesSold + ' cookies ';
+        ul.appendChild(li);
+    }
+}
+
+// Function renders the store name above lists
+//function storeName() {
+//    for(let i = 0; i < name.length; i++) {
+//        h2.textContent = name[i] + this.name;
+//        div.appendChild(h2);
+//    }
+//}
+
 // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
@@ -46,24 +48,9 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
 }
 
-//pioneer.hourlySales();
-//powells.hourlySales();
-//stjohns.hourlySales();
-//waterfront.hourlySales();
-//
-// what do we do to populate salesByHour?
-
-//function calcSales(custPerHour, salesByHour) {
-//        this.custPerHour;
-//        this.salesByHour = hourlySales;
-//        calcSales.push(calcSales)
-//    };
-//
-//console.log(calcSales);
-
-
 // Object literal for each store
 const airport = {
+    name: 'PDX Airport',
     min: 23,
     max: 65,
     avgSold: 6.3,
@@ -74,96 +61,50 @@ const airport = {
 airport.hourlySales();
 airport.render();
 
-function render() {
-    const ul = document.getElementById('sales');
-    for(let i = 0; i < hours.length; i++) {
-        const li = document.createElement('li');
-        li.textContent = hours[i] + ' : ' + this.salesByHour[i].cookiesSold + ' cookies ';
-        ul.appendChild(li);
-    }
-}
+const pioneer = {
+    name: 'Pioneer Square',
+    min: 3,
+    max: 24,
+    avgSold: 1.2,
+    hourlySales: hourlySales,
+    salesByHour: [],
+    render: render,
+};
+pioneer.hourlySales();
+pioneer.render();
 
-//const pioneer = {
-//    min: 3,
-//    max: 24,
-//    avgSold: 1.2,
-//    salesByHour: salesByHour,
-//    //    calcSales: 
-//    render() {
-//        const div = document.createElement('div');
-//        const li = document.createElement('li');
-//        for(let i = 0; i < this.hour.length; i++) {
-//            li.textContent = this.hour + ' ' + this.salesByHour + ' cookies ';
-//            div.appendChild('li');
-//        }
-//        return li;
-//    }
-//};
-//
-//const powells = {
-//    min: 11,
-//    max: 38,
-//    avgSold: 3.7,
-//    salesByHour: salesByHour,
-//    //   calcSales: total,
-//    render() {
-//        const div = document.createElement('div');
-//        const li = document.createElement('li');
-//        for(let i = 0; i < this.hour.length; i++) {
-//            li.textContent = this.hour + ' ' + this.salesByHour + ' cookies ';
-//            div.appendChild('li');
-//        }
-//        return li;
-//    }
-//};
-//
-//const stjohns = {
-//    min: 20,
-//    max: 38,
-//    avgSold: 2.3,
-//    salesByHour: salesByHour,
-//    //    calcSales: total,
-//    render() {
-//        const div = document.createElement('div');
-//        const li = document.createElement('li');
-//        for(let i = 0; i < this.hour.length; i++) {
-//            li.textContent = this.hour + ' ' + this.salesByHour + ' cookies ';
-//            div.appendChild('li');
-//        }
-//        return li;
-//    }
-//};
-//
-//const waterfront = {
-//    min: 2,
-//    max: 16,
-//    avgSold: 4.6,
-//    salesByHour: salesByHour,
-//    //   calcSales: total,
-//    render() {
-//        const div = document.createElement('div');
-//        const li = document.createElement('li');
-//        for(let i = 0; i < this.hour.length; i++) {
-//            li.textContent = this.hour + ' ' + this.salesByHour + ' cookies ';
-//            div.appendChild('li');
-//        }
-//        return li;
-//    }
-//};
+const powells = {
+    name: 'Powell\'s',
+    min: 11,
+    max: 38,
+    avgSold: 3.7,
+    hourlySales: hourlySales,
+    salesByHour: [],
+    render: render,
+};
+powells.hourlySales();
+powells.render();
 
+const stjohns = {
+    name: 'St. John\'s',
+    min: 20,
+    max: 38,
+    avgSold: 2.3,
+    hourlySales: hourlySales,
+    salesByHour: [],
+    render: render,
+};
+stjohns.hourlySales();
+stjohns.render();
 
-
-//const ul = document.getElementById('main-list');
-
-// 1. create the element that you want
-//const li = document.createElement('li');
-
-// 3. add (append) to the parent element
-//ul.appendChild(li);
-
-
-
-//for(let i = 0; i < hours.length; i++) {
-//    const li = hourlySales[i].render();
-//    ul.appendChild(li);
-//}
+const waterfront = {
+    name: 'Waterfront',
+    min: 2,
+    max: 16,
+    avgSold: 4.6,
+    hourlySales: hourlySales,
+    salesByHour: [],
+    render: render,
+};
+waterfront.hourlySales();
+waterfront.render();
