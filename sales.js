@@ -1,17 +1,6 @@
 'use strict';
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '8pm',];
-//const storeName = ['PDX Airport', 'Pioneer Sq', 'Powell\'s', 'St. John\'s', 'Waterfront'];
-
-// constructor function to build store and it's data
-class Store {
-    constructor(name, min, max, avgSold) {
-        this.name = name;
-        this.min = min;
-        this.max = max;
-        this.avgSold = avgSold;
-    }
-};
 
 const airport = new Store('PDX Airport', 23, 65, 6.3);
 const pioneer = new Store('Pioneer Square', 3, 24, 1.2);
@@ -19,9 +8,15 @@ const powells = new Store('Powell\s', 11, 38, 3.7);
 const stjohns = new Store('St. John\s', 20, 38, 2.3);
 const waterfront = new Store('Waterfront', 2, 16, 4.6);
 
+// constructor function to build store and its data
+function Store(name, min, max, avgSold) {
+    this.name = name;
+    this.min = min;
+    this.max = max;
+    this.avgSold = avgSold;
+    this.salesByHour = salesByHour[];
+//    this.salesByHour = 0;
 
-Store.prototype.hourlySales = function() {
-    const salesByHour = [];
     for (let i = 0; i < hours.length; i++){
         const hour = hours[i];
         const custPerHour = getRandomIntInclusive(this.min, this.max);
@@ -36,26 +31,26 @@ Store.prototype.hourlySales = function() {
 };
 
 
-airport.hourlySales();
-pioneer.hourlySales();
-powells.hourlySales();
-stjohns.hourlySales();
-waterfront.hourlySales();
+Store.prototype.buildTable = function() {    
+    const stores = document.getElementById('stores-list');
+    const tr = document.getElementById('TR');
+    for (let i = 0; i < hours.length; i++) {
+        const th = document.createElement('TH');
+        th.textContent = this.name;
+        tr.textContent = hours[i] + ' : ' + this.salesByHour[i].cookiesSold + ' cookies ';
+        tr.appendChild(th);
+    };
+    return table;
+};
 
-//
-//        render(){
-//        const div = document.createElement('DIV');
-//        const h2 = document.createElement('H2');
-//        h2.textContent = this.name;
-//        div.appendChild(h2);
-//
-//        const ul = document.getElementById('sales');
-//        for(let i = 0; i < hours.length; i++) {
-//            const li = document.createElement('li');
-//            li.textContent = hours[i] + ' : ' + this.salesByHour[i].cookiesSold + ' cookies ';
-//            ul.appendChild(li);
-//        }
-//    }
+
+//airport.hourlySales();
+
+
+//   airport.hourlySales();
+
+ 
+
 ////    hourlySales(){
 //        const salesByHour = [];
 //        for (let i = 0; i < hours.length; i++){
