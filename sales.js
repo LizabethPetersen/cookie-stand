@@ -2,21 +2,18 @@
 
 const hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '8pm',];
 
-const airport = new Store('PDX Airport', 23, 65, 6.3);
-const pioneer = new Store('Pioneer Square', 3, 24, 1.2);
-const powells = new Store('Powell\s', 11, 38, 3.7);
-const stjohns = new Store('St. John\s', 20, 38, 2.3);
-const waterfront = new Store('Waterfront', 2, 16, 4.6);
-
-// constructor function to build store and its data
+// constructor function to build store and its data (function declaration)
 function Store(name, min, max, avgSold) {
     this.name = name;
     this.min = min;
     this.max = max;
     this.avgSold = avgSold;
-    this.salesByHour = salesByHour[];
-//    this.salesByHour = 0;
+    this.salesByHour = [];
+    this.renderCookiesSold();
+};
 
+// function expression
+Store.prototype.renderCookiesSold = function() {
     for (let i = 0; i < hours.length; i++){
         const hour = hours[i];
         const custPerHour = getRandomIntInclusive(this.min, this.max);
@@ -25,10 +22,15 @@ function Store(name, min, max, avgSold) {
             hour: hour,
             cookiesSold: cookiesPerHour
         };
-        salesByHour.push(oneHour);
+        this.salesByHour.push(oneHour);
     }
-    this.salesByHour = salesByHour;
 };
+
+const airport = new Store('PDX Airport', 23, 65, 6.3);
+const pioneer = new Store('Pioneer Square', 3, 24, 1.2);
+const powells = new Store('Powell\s', 11, 38, 3.7);
+const stjohns = new Store('St. John\s', 20, 38, 2.3);
+const waterfront = new Store('Waterfront', 2, 16, 4.6);
 
 
 Store.prototype.buildTable = function() {    
