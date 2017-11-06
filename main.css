@@ -1,20 +1,92 @@
 body {
-    background-color: #eee;
-    color: #000000;
+    background-color: rgba(220, 194, 136, 1);
+    color: #000;
+}
+
+wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header {
+   margin-top: 10px;
+   border-top: 10px solid rgb(143, 143, 143);
+   padding-top: 20px; 
+}
+
+img {
+    float: left;
+    padding-left: 40px;
 }
 
 h1 {
-    font-family: 'Bitter', serif;
-    font-size: 24px;
-    color: #962e05;
+    font-family: 'Spirax', cursive;
+    font-size: 48px;
+    color: rgba(104, 41, 26, 1);
 }
 
 h2 {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-family: 'Spirax', cursive;
+    font-size: 28px;
+    line-height: .2em;
     font-weight: bold;
-    color: #573f3f;
+    color: rgba(156, 74, 50, 1);
+    padding-bottom: 30px;
 }
+
+h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(77, 77, 77, 1);
+}
+
+.nav {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(143, 143, 143);
+    text-align: center;
+}
+
+li {
+    display: inline;
+    list-style-type: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+li a {
+    display: inline-block;
+    color: rgba(104, 41, 26, 1);
+    padding: 9px 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+/* unvisited link */
+a:link {
+    color: rgba(104, 41, 26, 1);
+}
+
+/* visited link */
+a:visited {
+    color: rgba(77, 77, 77, 1);
+}
+
+/* mouse over link */
+a:hover {
+    color: rgba(156, 74, 50, 1);
+}
+
+/* selected link */
+a:active {
+    color: rgba(156, 74, 50, 1);
+    text-decoration: none;
+}
+
+
+
+/* styling for tables
 
 #th {
     font-family: 'Open Sans', sans-serif;
@@ -36,4 +108,4 @@ table.fake {
     border: 1px solid #777;
     padding: 10px;
 }
-
+*/
