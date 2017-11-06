@@ -1,0 +1,39 @@
+body {
+    background-color: #eee;
+    color: #000000;
+}
+
+h1 {
+    font-family: 'Bitter', serif;
+    font-size: 24px;
+    color: #962e05;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #573f3f;
+}
+
+#th {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+}
+
+ul#sales {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #000;
+}
+
+table.fake {
+    width: 100%;
+    color: #eee;
+    border: 1px solid #777;
+    padding: 10px;
+}
+
