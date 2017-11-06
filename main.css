@@ -142,23 +142,34 @@ img.align-center {
 
 /* styling for tables */
 
-#th {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+table {
+    width: 600px;
+    background-color: #eee;
+    border: 1px solid rgba(77, 77, 77, 1);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    color: #000;
+}
+
+th, td {
+    padding: 6px 10px 6px 10px;
+}
+
+th {
+    text-transform: uppercase;
     font-weight: bold;
-    color: #000;
+    border-bottom: 2px solid rgba(77, 77, 77, 1);
+    text-align: left;
 }
 
-ul#sales {
+tr {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
-    color: #000;
+    color: rgba(77, 77, 77, 1);
 }
 
-table.fake {
-    width: 100%;
-    color: #eee;
-    border: 1px solid rgb(143, 143, 143);
-    padding: 10px;
+tr.even {
+    background-color: rgb(143, 143, 143);
 }
+
