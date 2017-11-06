@@ -9,7 +9,9 @@ function Store(name, min, max, avgSold) {
     this.max = max;
     this.avgSold = avgSold;
     this.salesByHour = [];
+    this.salesByDay = [];
     this.renderCookiesSold();
+    this.buildTable();
 };
 
 // function expression
@@ -32,83 +34,37 @@ const powells = new Store('Powell\s', 11, 38, 3.7);
 const stjohns = new Store('St. John\s', 20, 38, 2.3);
 const waterfront = new Store('Waterfront', 2, 16, 4.6);
 
+//const stores = ['PDX Airport', 'Pioneer', 'Powell\'s', 'St. John\'s', 'Waterfront'];
 
-Store.prototype.buildTable = function() {    
-    const stores = document.getElementById('stores-list');
-    const tr = document.getElementById('TR');
+Table.prototype.buildTable = function() {
+    // table construction
+    const tableRow = document.createElement('TR'); // creates a row for each store
+    const rowHeader = document.createElement('TH'); // creates a column for the store name
+    rowHeader.textContent = this.name; // populates column with store names
+    tableRow.appendChild(rowHeader); // appends row header to table row (that lists store names)
+    console.log(tableRow);
+
+    // fill rows with data
     for (let i = 0; i < hours.length; i++) {
-        const th = document.createElement('TH');
-        th.textContent = this.name;
-        tr.textContent = hours[i] + ' : ' + this.salesByHour[i].cookiesSold + ' cookies ';
-        tr.appendChild(th);
-    };
-    return table;
+        const tableDataSales = document.createElement('TD'); // creates row item for sales data
+        tableRow.appendChild(tableDataSales); // appends table data to table row
+        tableDataSales.textContent = this.salesByHour[i].cookiesSold;
+    }
+    // add totals to end or row
+    const totalSales = document.createElement('TD'); // creates place for total sales data
+    tableRow.appendChild(totalSales);
+    totalSales.textContent = this.salesByDay;
 };
 
+airport.renderCookiesSold();
+pioneer.renderCookiesSold();
+powells.renderCookiesSold();
+stjohns.renderCookiesSold();
+waterfront.renderCookiesSold();
 
-//airport.hourlySales();
-
-
-//   airport.hourlySales();
-
- 
-
-////    hourlySales(){
-//        const salesByHour = [];
-//        for (let i = 0; i < hours.length; i++){
-//            const hour = hours[i];
-//            const custPerHour = getRandomIntInclusive(this.min, this.max);
-//            const cookiesPerHour = Math.floor(custPerHour * this.avgSold);
-//            const oneHour = {
-//                hour: hour,
-//                cookiesSold: cookiesPerHour
-//            };
-//            salesByHour.push(oneHour);
-//        }
-//        this.salesByHour = salesByHour;
-//    }
-//}
-
-
-// Function for calculating customers per hour per store
-//function hourlySales(){
-//    const salesByHour = [];
-//    for (let i = 0; i < hours.length; i++){
-//        const hour = hours[i];
-//        const custPerHour = getRandomIntInclusive(this.min, this.max);
-//        const cookiesPerHour = Math.floor(custPerHour * this.avgSold);
-//        const oneHour = {
-//            hour: hour,
-//            cookiesSold: cookiesPerHour
-//        };
-//        salesByHour.push(oneHour);
-//    }
-//    this.salesByHour = salesByHour;
-//}
-//
-//// Function renders # of customers and cookies sold per hour
-//function render() {
-//    const div = document.createElement('DIV');
-//    const h2 = document.createElement('H2');
-//    div.appendChild(h2);
-//    const ul = document.getElementById('sales');
-//    for(let i = 0; i < hours.length; i++) {
-//        const li = document.createElement('li');
-//        li.textContent = this.name + ' : ' + hours[i] + ' : ' + this.salesByHour[i].cookiesSold + ' cookies ';
-//        ul.appendChild(li);
-//    }
-//}
 // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
 }
-
-
-//
-//airport.buildStore();
-//pioneer.buildStore();
-//powells.buildStore();
-//stjohns.buildStore();
-//waterfront.buildStore();
