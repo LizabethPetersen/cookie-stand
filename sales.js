@@ -36,7 +36,7 @@ const waterfront = new Store('Waterfront', 2, 16, 4.6);
 
 //const stores = ['PDX Airport', 'Pioneer', 'Powell\'s', 'St. John\'s', 'Waterfront'];
 
-Table.prototype.buildTable = function() {
+Store.prototype.buildTable = function() {
     // table construction
     const tableRow = document.createElement('TR'); // creates a row for each store
     const rowHeader = document.createElement('TH'); // creates a column for the store name
