@@ -14,9 +14,18 @@ wrapper {
    padding-top: 20px; 
 }
 
-img {
+img.main {
     float: left;
     padding-left: 40px;
+}
+
+img.align-left {
+    float: left;
+    padding: 6px;
+}
+img.small {
+    width: 30px;
+    height: 30px;
 }
 
 h1 {
@@ -36,9 +45,14 @@ h2 {
 
 h3 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: rgba(77, 77, 77, 1);
+}
+
+p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(143, 143, 143);
 }
 
 .nav {
@@ -62,7 +76,6 @@ li a {
     text-transform: uppercase;
 }
 
-
 /* unvisited link */
 a:link {
     color: rgba(104, 41, 26, 1);
@@ -84,19 +97,60 @@ a:active {
     text-decoration: none;
 }
 
+h2.align-center {
+    display: block;
+    font-family: 'Spirax', cursive;
+    font-size: 28px;
+    line-height: .2em;
+    font-weight: bold;
+    color: rgba(156, 74, 50, 1);
+    padding: 10px;
+}
+
+#container{
+    display: flex;
+}
+
+aside {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+    padding-right: 20px;
+}
+
+article {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    background-color: #fff;
+    border: 1px solid rgba(77, 77, 77, 1);
+    border-radius: 2pt;
+    padding: 6px;
+}
+
+#centered {
+    justify-content: space-between;
+    width: 40%;
+}
+
+img.align-center {
+    display: block;
+    margin: 0px auto;
+}
 
 
-/* styling for tables
+
+/* styling for tables */
 
 #th {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     font-weight: bold;
     color: #000;
 }
 
 ul#sales {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     font-weight: normal;
     color: #000;
@@ -105,7 +159,6 @@ ul#sales {
 table.fake {
     width: 100%;
     color: #eee;
-    border: 1px solid #777;
+    border: 1px solid rgb(143, 143, 143);
     padding: 10px;
 }
-*/
